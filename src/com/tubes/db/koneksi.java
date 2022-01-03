@@ -8,7 +8,7 @@ public class koneksi {
     Connection conn = null;
     public static Connection koneksi(){
         String driver = "com.mysql.jdbc.Driver";
-        String host = "jdbc:mysql://localhost/teknoko";
+        String host = "jdbc:mysql://localhost/Garshop";
         String user = "root";
         String pass = "";
         try {

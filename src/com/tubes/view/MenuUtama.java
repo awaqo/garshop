@@ -1,10 +1,17 @@
 package com.tubes.view;
 
 public class MenuUtama {
-    public void Menu(){
-        System.out.println("Silahkan pilih menu");
-        System.out.println("1. Jual");
-        System.out.println("2. Beli");
-        System.out.println("3. Keluar");
+    public void Menu() {
+        System.out.println(">\tMenu");
+        System.out.println("\t1. Jual Mobil");
+        System.out.println("\t2. Beli Mobil");
+        System.out.println("\t3. Laporan Jual");
+        System.out.println("\t4. Laporan Beli");
+        System.out.println("\t5. Keluar");
+        System.out.print("\tPilih Menu: ");
+    }
+
+    public void PilihMerk() {
+
     }
 }
