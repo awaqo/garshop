@@ -11,6 +11,9 @@ public class Mobil {
         this.harga = harga;
     }
 
+    public Mobil() {
+    }
+
     public String getMerk() {
         return merk;
     }

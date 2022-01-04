@@ -12,6 +12,9 @@ public class MenuUtama {
     }
 
     public void PilihMerk() {
-
+        System.out.println(">\tMenu");
+        System.out.println("\t1. Toyota");
+        System.out.println("\t2. Mitsubishi");
+        System.out.print("\tPilih Menu: ");
     }
 }

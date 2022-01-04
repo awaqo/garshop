@@ -3,19 +3,22 @@ package com.tubes.model;
 public class Toyota extends Mobil {
     private int cc;
     private String plat;
-    private String kondisi;
+    private String jenis;
 
-    public Toyota(String merk, int tahun, int harga, int cc, String plat, String kondisi) {
+    public Toyota(String plat, String merk, int tahun, int harga, int cc, String jenis) {
         super(merk, tahun, harga);
         this.cc = cc;
         this.plat = plat;
-        this.kondisi = kondisi;
+        this.jenis = jenis;
     }
 
-    public Toyota(String merk, int tahun, int harga, int cc, String plat) {
+    public Toyota(String plat, String merk, int tahun, int harga, int cc) {
         super(merk, tahun, harga);
         this.cc = cc;
         this.plat = plat;
+    }
+
+    public Toyota() {
     }
 
     public int getCc() {
@@ -34,11 +37,11 @@ public class Toyota extends Mobil {
         this.plat = plat;
     }
 
-    public String getKondisi() {
-        return kondisi;
+    public String getJenis() {
+        return jenis;
     }
 
-    public void setKondisi(String kondisi) {
-        this.kondisi = kondisi;
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
     }
 }
