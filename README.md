@@ -82,9 +82,82 @@ Secara eksplisit, kita dapat melempar (throw) exception dari program menggunakan
  
 <hr>
 
-## Praktikum
+## Penjelasan Program
 
+Berikut ini adalah penjelasan program kami yang bernama GarShop dan kaitannya dengan materi pada modul 3-9.
 
+1. Pengenalan Pemrograman Berorientasi Objek
+
+a. Pada program Garshop ini terdapat banyak sekali class yang terdeklarasi. Sebagai contoh berikut contoh class koneksi pada branc db :
+
+```java
+public class koneksi {
+    Connection conn = null;
+    public static Connection koneksi(){
+        String driver = "com.mysql.jdbc.Driver";
+        String host = "jdbc:mysql://localhost/Garshop";
+        String user = "root";
+        String pass = "";
+        try {
+            Class.forName(driver);
+            Connection conn = DriverManager.getConnection(host,user,pass);
+//            System.out.println("Koneksi Berhasil");
+            return conn;
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Koneksi Gagal "+e);
+        }
+        return null;
+    }
+}
+```
+
+Class diatas digunakan untuk mengkoneksikan antara program GarShop dengan database yang telah kami buat. Untuk access modifier-nya kami buat public, menyesuaikan dengan kebutuhan kami.
+
+b. Dalam program kami juga membutuhkan sebuah atribut, sebagai contoh berikut deklarasi atribut dari branch model class Mitsubshi :
+
+```java
+private int cc;
+private String plat;
+private String jenis;
+```
+
+Atribut diatas adalah atribut yang memiliki access modifier private yang hanya akan digunakan pada class ini. Atribut tersebut masing-masing akan digunakan untuk menampung nilai mesin cc, plat nomor mobil, dan juga jenis mobil yang ditawarkan.
+
+c. Pada class yang sama kami juga hadirkan contoh methode yang bernama setJenis :
+
+```java
+public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+```
+
+Methode diatas dibuat untuk memperbarui nilai pada variabel jenis pada parameter.
+
+d. Berikut contoh program akses anggota obyek pada brach model methode jual :
+
+```java
+public void jual(Toyota toyota, String kondisi) {
+        try {
+            st = cn.createStatement();
+            String query = "INSERT INTO mobil VALUES (" +
+                    "'"+ toyota.getPlat() +"', " +
+                    "'"+ toyota.getMerk() +"', " +
+                    "'Toyota', " +
+                    "'"+ toyota.getTahun() +"', " +
+                    "'"+ toyota.getHarga() +"', " +
+                    "'"+ toyota.getCc() +"', " +
+                    "'"+ kondisi +"', " +
+                    "'"+ toyota.getJenis() +"'" +
+                    ")";
+            st.execute(query);
+            System.out.println("Data Berhasil Ditambahkan");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+```
+
+Program diatas memanggil obyek toyota.getPalt, getMerk, GetTahun dan lain sebagainya. Output dari program ini nantinya akan memberikan perintah kepada database untuk menerima/menginput data dari user data tentang mobil yang akan dijual.
 
 <hr>
 
