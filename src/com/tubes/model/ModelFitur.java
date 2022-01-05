@@ -90,7 +90,7 @@ public class ModelFitur implements InterfaceMain {
 
         try {
             st = cn.createStatement();
-            String sql = "SELECT * FROM mobil  WHERE tipe = 'Mitsubishi'";
+            String sql = "SELECT * FROM mobil WHERE tipe = 'Mitsubishi'";
             rs = st.executeQuery(sql);
 
             int i = 0;
@@ -111,5 +111,99 @@ public class ModelFitur implements InterfaceMain {
             e.printStackTrace();
         }
         return data1;
+    }
+
+    @Override
+    public int countToyota() {
+        int count = 0;
+        try {
+            st = cn.createStatement();
+            String query = "SELECT count(*) FROM mobil WHERE tipe = 'Toyota'";
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                count = rs.getInt("count(*)");
+            }
+            return count;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    @Override
+    public int countMitsubishi() {
+        int count = 0;
+        try {
+            st = cn.createStatement();
+            String query = "SELECT count(*) FROM mobil WHERE tipe = 'Mitsubishi'";
+            rs = st.executeQuery(query);
+            count = 0;
+            while (rs.next()) {
+                count = rs.getInt("count(*)");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    @Override
+    public int cariToyota(int pilih, String[][] dataToyota) {
+        int harga = 0;
+        try {
+            st = cn.createStatement();
+            String sql = "SELECT harga FROM mobil WHERE no_plat = '"+ dataToyota[pilih][0] +"'";
+            rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                harga = Integer.parseInt(rs.getString("harga"));
+            }
+            return harga;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return harga;
+    }
+
+    @Override
+    public int cariMitsubishi(int pilih, String[][] dataMitsubishi) {
+        int harga = 0;
+        try {
+            st = cn.createStatement();
+            String sql = "SELECT harga FROM mobil WHERE no_plat = '"+ dataMitsubishi[pilih][0] +"'";
+            rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                harga = Integer.parseInt(rs.getString("harga"));
+            }
+            return harga;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return harga;
+    }
+
+    @Override
+    public void beliToyota(int pilih, String[][] dataToyota) {
+        try {
+            st = cn.createStatement();
+            String query = "DELETE FROM mobil WHERE no_plat = '"+ dataToyota[pilih][0] +"'";
+            st.execute(query);
+            System.out.println("\tSelamat, Anda Berhasil Membeli Mobil Tersebut.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void beliMitsubishi(int pilih, String[][] dataMitsubishi) {
+        try {
+            st = cn.createStatement();
+            String query = "DELETE FROM mobil WHERE no_plat = '"+ dataMitsubishi[pilih][0] +"'";
+            st.execute(query);
+            System.out.println("\tSelamat, Anda Berhasil Membeli Mobil Tersebut.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

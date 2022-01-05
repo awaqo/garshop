@@ -7,7 +7,6 @@ public class MenuUtama {
         System.out.println("\t2. Beli Mobil");
         System.out.println("\t3. Keluar");
         System.out.print("\tPilih Menu: ");
-        System.out.println();
     }
 
     public void PilihMerk() {
@@ -15,6 +14,5 @@ public class MenuUtama {
         System.out.println("\t1. Toyota");
         System.out.println("\t2. Mitsubishi");
         System.out.print("\tPilih Menu: ");
-        System.out.println();
     }
 }

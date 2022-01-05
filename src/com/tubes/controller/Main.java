@@ -14,6 +14,7 @@ public class Main {
 
         menu.Menu();
         int pilih_menu = Sint.nextInt();
+        System.out.println();
 
         do {
             switch (pilih_menu) {
@@ -21,14 +22,13 @@ public class Main {
                     fitur.FiturJual();
                     menu.Menu();
                     pilih_menu = Sint.nextInt();
+                    System.out.println();
                     break;
                 case 2:
                     fitur.FiturBeli();
                     menu.Menu();
                     pilih_menu = Sint.nextInt();
-                    break;
-                case 3:
-
+                    System.out.println();
                     break;
             }
         } while (pilih_menu != 3);

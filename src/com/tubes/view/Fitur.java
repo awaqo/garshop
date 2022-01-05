@@ -13,8 +13,8 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Fitur {
-    MenuUtama menu = new MenuUtama();
-    ModelFitur model = new ModelFitur();
+    static MenuUtama menu = new MenuUtama();
+    static ModelFitur model = new ModelFitur();
 
     static Scanner Sint = new Scanner(System.in);
     static Scanner Sstring = new Scanner(System.in);
@@ -23,59 +23,49 @@ public class Fitur {
     public static ResultSet rs;
     static Connection cn = koneksi.koneksi();
 
-    public static void instance1(Mobil mobil) {
-        ModelFitur model = new ModelFitur();
+    static String[][] dataToyota;
+    static String[][] dataMitsubishi;
 
+    public static boolean bayar(int bayar, int harga) {
+        if ( bayar == harga ) {
+            return false;
+        }
+        return true;
+    }
+
+    public static void instance(Mobil mobil) {
         if (mobil instanceof Toyota) {
             Toyota toyota = (Toyota) mobil;
-            try {
-                st = cn.createStatement();
-                String query = "SELECT count(*) FROM mobil WHERE tipe = 'Toyota'";
-                rs = st.executeQuery(query);
-                int d = 0;
-                while (rs.next()) {
-                    d = rs.getInt("count(*)");
-                }
-                String[][] data = model.beli(toyota, d);
+
+            int count = model.countToyota();
+            dataToyota = model.beli(toyota, count);
 //                System.out.println(data[0][1]);
 
-                for (int i = 0; i < data.length; i++) {
-                    System.out.print("\n" + i + ".");
-                    System.out.println("\tNo Plat: " + data[i][0]);
-                    System.out.println("\tMerk: " + data[i][1]);
-                    System.out.println("\tTahun: " + data[i][2]);
-                    System.out.println("\tHarga: " + data[i][3]);
-                    System.out.println("\tCC: " + data[i][4]);
-                    System.out.println("\tKondisi: " + data[i][5]);
-                    System.out.println("\tJenis: " + data[i][6]);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
+            for (int i = 0; i < dataToyota.length; i++) {
+                System.out.print("\n" + i + ".");
+                System.out.println("\tNo Plat: " + dataToyota[i][0]);
+                System.out.println("\tMerk: " + dataToyota[i][1]);
+                System.out.println("\tTahun: " + dataToyota[i][2]);
+                System.out.println("\tHarga: " + dataToyota[i][3]);
+                System.out.println("\tCC: " + dataToyota[i][4]);
+                System.out.println("\tKondisi: " + dataToyota[i][5]);
+                System.out.println("\tJenis: " + dataToyota[i][6]);
             }
         } else if (mobil instanceof Mitsubishi) {
             Mitsubishi mitsubishi = (Mitsubishi) mobil;
-            try {
-                st = cn.createStatement();
-                String query = "SELECT count(*) FROM mobil WHERE tipe = 'Mitsubishi'";
-                rs = st.executeQuery(query);
-                int d = 0;
-                while (rs.next()) {
-                    d = rs.getInt("count(*)");
-                }
-                String[][] data = model.beli(mitsubishi, d);
 
-                for (int i = 0; i < data.length; i++) {
-                    System.out.print("\n" + i + ".");
-                    System.out.println("\tNo Plat: " + data[i][0]);
-                    System.out.println("\tMerk: " + data[i][1]);
-                    System.out.println("\tTahun: " + data[i][2]);
-                    System.out.println("\tHarga: " + data[i][3]);
-                    System.out.println("\tCC: " + data[i][4]);
-                    System.out.println("\tKondisi: " + data[i][5]);
-                    System.out.println("\tJenis: " + data[i][6]);
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
+            int count = model.countMitsubishi();
+            dataMitsubishi = model.beli(mitsubishi, count);
+
+            for (int i = 0; i < dataMitsubishi.length; i++) {
+                System.out.print("\n" + i + ".");
+                System.out.println("\tNo Plat: " + dataMitsubishi[i][0]);
+                System.out.println("\tMerk: " + dataMitsubishi[i][1]);
+                System.out.println("\tTahun: " + dataMitsubishi[i][2]);
+                System.out.println("\tHarga: " + dataMitsubishi[i][3]);
+                System.out.println("\tCC: " + dataMitsubishi[i][4]);
+                System.out.println("\tKondisi: " + dataMitsubishi[i][5]);
+                System.out.println("\tJenis: " + dataMitsubishi[i][6]);
             }
         }
     }
@@ -83,6 +73,7 @@ public class Fitur {
     public void FiturJual() {
         menu.PilihMerk();
         int pilih_merk = Sint.nextInt();
+        System.out.println();
 
         switch (pilih_merk) {
             case 1:
@@ -95,7 +86,7 @@ public class Fitur {
                 int tahun = Sint.nextInt();
                 System.out.print("\tMasukkan harga: ");
                 int harga = Sint.nextInt();
-                System.out.print("\tMasukkan CC:");
+                System.out.print("\tMasukkan CC: ");
                 int cc = Sint.nextInt();
 
                 System.out.println(">\tJenis");
@@ -129,7 +120,7 @@ public class Fitur {
                 int tahun1 = Sint.nextInt();
                 System.out.print("\tMasukkan harga: ");
                 int harga1 = Sint.nextInt();
-                System.out.print("\tMasukkan CC:");
+                System.out.print("\tMasukkan CC: ");
                 int cc1 = Sint.nextInt();
 
                 System.out.println(">\tJenis");
@@ -157,15 +148,48 @@ public class Fitur {
     public void FiturBeli() {
         menu.PilihMerk();
         int pilihmerk = Sint.nextInt();
+        System.out.println();
 
         switch (pilihmerk) {
             case 1:
                 Mobil toyota = new Toyota();
-                instance1(toyota);
+                instance(toyota);
+
+                System.out.println();
+                System.out.print("\tPilih Mobil: ");
+                int pilih = Sint.nextInt();
+                int harga = model.cariToyota(pilih, dataToyota);
+                System.out.println("\tHarga: " + harga);
+
+                boolean hasil = true;
+                do {
+                    System.out.print("\tBayar: ");
+                    int bayar = Sint.nextInt();
+
+                    hasil = bayar(bayar, harga);
+                } while (hasil);
+                model.beliToyota(pilih, dataToyota);
+                System.out.println();
                 break;
             case 2:
                 Mobil mitsubishi = new Mitsubishi();
-                instance1(mitsubishi);
+                instance(mitsubishi);
+
+                System.out.println();
+                System.out.print("\tPilih Mobil: ");
+                int pilih1 = Sint.nextInt();
+                int harga1 = model.cariToyota(pilih1, dataMitsubishi);
+                System.out.println("\tHarga: " + harga1);
+
+                boolean hasil1 = true;
+                do {
+                    System.out.print("\tBayar: ");
+                    int bayar = Sint.nextInt();
+
+                    hasil1 = bayar(bayar, harga1);
+                } while (hasil1);
+                model.beliMitsubishi(pilih1, dataMitsubishi);
+                System.out.println();
                 break;
         }
     }
