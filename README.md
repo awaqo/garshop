@@ -139,29 +139,18 @@ Methode diatas dibuat untuk memperbarui nilai pada variabel jenis pada parameter
 <br> Berikut contoh program akses anggota obyek pada brach model methode jual :
 
 ```java
-public void jual(Toyota toyota, String kondisi) {
-        try {
-            st = cn.createStatement();
-            String query = "INSERT INTO mobil VALUES (" +
-                    "'"+ toyota.getPlat() +"', " +
-                    "'"+ toyota.getMerk() +"', " +
-                    "'Toyota', " +
-                    "'"+ toyota.getTahun() +"', " +
-                    "'"+ toyota.getHarga() +"', " +
-                    "'"+ toyota.getCc() +"', " +
-                    "'"+ kondisi +"', " +
-                    "'"+ toyota.getJenis() +"'" +
-                    ")";
-            st.execute(query);
-            System.out.println("Data Berhasil Ditambahkan");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+public class Fitur {
+    MenuUtama menu = new MenuUtama();
+    ModelFitur model = new ModelFitur();
+
+    static Scanner Sint = new Scanner(System.in);
+    static Scanner Sstring = new Scanner(System.in);
+...
     }
 ```
 
 Program diatas memanggil obyek toyota.getPalt, getMerk, GetTahun dan lain sebagainya. Output dari program ini nantinya akan memberikan perintah kepada database untuk menerima/menginput data dari user data tentang mobil yang akan dijual.
-<br><br>
+<br><br><br>
 
 ### ☂️ Dasar Pemrograman Berorientasi Objek `Modul 4`
 
@@ -280,7 +269,7 @@ public Mitsubishi(String merk, int tahun, int harga, int cc, String plat) {
 ```
 
 Terdapat dua kata kunci this pada kode program diatas. Yang pertama this untuk variabel cc, jadi nantinya nilai cc akan diperbarui ke nilai terbaru, begitu juga berlaku pada this variabel plat yang nilainya akan diperbarui.
-<br><br>
+<br><br><br>
 
 ### ☂️ Konsep Inhertence `Modul 6`
 
@@ -293,12 +282,12 @@ public class Mitsubishi extends Mobil {
 ```
 
 Maksud dari contoh diatas adalah class Mitsubishi adalah subclass/turunan dari Class Mobil. Yang berarti mewarisi sifat dari class utamanya.
-<br><br>
+<br><br><br>
 
 ### ☂️ Overloading dan Overriding `Modul 7`
 
-
-Overloading adalah suatu keadaan dimana ada beberapa method dengan nama yang sama pada suatu class tetapi dengan parameter yang berbeda (mempunyai implementasi dan return value).
+1. Overloading
+<br> Overloading adalah suatu keadaan dimana ada beberapa method dengan nama yang sama pada suatu class tetapi dengan parameter yang berbeda (mempunyai implementasi dan return value).
 
 ```java
 public Mitsubishi(String plat, String merk, int tahun, int harga, int cc,  String jenis) {
@@ -316,10 +305,78 @@ public Mitsubishi(String plat, String merk, int tahun, int harga, int cc,  Strin
 
 ```
  memungkinkan metode yang berbeda untuk memiliki nama yang sama, tetapi tanda tangan yang berbeda di mana tanda tangan dapat berbeda dengan jumlah parameter input atau jenis parameter input atau keduanya. Overloading terkait dengan waktu kompilasi (atau statis) polimorfisme
- 
+
+2. Overriding
+<br> Overriding merupakan mekanisme dimana sebuah metode dapat dideklarasikan ulang pada kelas turunannya. Ciri dari overriding antara lain :
+- Nama method harus sama
+- Daftar parameter harus sama
+- Return type harus sama
+Contoh penerapan Overriding pada program kami
+```java
+@Override
+    public void jual(Toyota toyota, String kondisi) {
+        try {
+            st = cn.createStatement();
+            String query = "INSERT INTO mobil VALUES (" +
+                    "'"+ toyota.getPlat() +"', " +
+                    "'"+ toyota.getMerk() +"', " +
+                    "'Toyota', " +
+                    "'"+ toyota.getTahun() +"', " +
+                    "'"+ toyota.getHarga() +"', " +
+                    "'"+ toyota.getCc() +"', " +
+                    "'"+ kondisi +"', " +
+                    "'"+ toyota.getJenis() +"'" +
+                    ")";
+            st.execute(query);
+            System.out.println("Data Berhasil Ditambahkan");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+```
 <br><br>
 
 ### ☂️ Polimorfisme `Modul 8`
+
+1. Polimorfisme
+<br> Polymorphism (polimorfisme) adalah kemampuan untuk mempunyai beberapa bentuk class yang berbeda. Polimorfisme ini terjadi pada saat suatu obyek bertipe parent class, akan tetapi pemanggilan constructornya melalui subclass. Contoh penerapannya pada program kami :
+```java
+public void FiturBeli() {
+        menu.PilihMerk();
+        int pilihmerk = Sint.nextInt();
+
+        switch (pilihmerk) {
+            case 1:
+                Mobil toyota = new Toyota();
+                instance1(toyota);
+                break;
+            case 2:
+                Mobil mitsubishi = new Mitsubishi();
+                instance1(mitsubishi);
+                break;
+        }
+    }
+```
+2. Instanceof
+Pernyataan instanceof sangat berguna untuk mengetahui tipe asal dari suatu polymorphic arguments. Penerapan instanceof di dalam program milik kami :
+```java
+    public static void instance1(Mobil mobil) {
+        ModelFitur model = new ModelFitur();
+
+        if (mobil instanceof Toyota) {
+            Toyota toyota = (Toyota) mobil;
+            try {
+                st = cn.createStatement();
+                String query = "SELECT count(*) FROM mobil WHERE tipe = 'Toyota'";
+                rs = st.executeQuery(query);
+                int d = 0;
+                while (rs.next()) {
+                    d = rs.getInt("count(*)");
+                }
+                ...
+        }
+     }   
+```
 <br><br>
 
 ### ☂️ Exception `Modul 9`
