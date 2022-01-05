@@ -121,7 +121,7 @@ private String plat;
 private String jenis;
 ```
 
-Atribut diatas adalah atribut yang memiliki access modifier private yang hanya akan digunakan pada class ini. Atribut tersebut masing-masing akan digunakan untuk menampung nilai mesin cc, plat nomor mobil, dan juga jenis mobil yang ditawarkan.
+Atribut diatas adalah atribut yang memiliki access modifier private yang hanya akan digunakan pada class ini. Atribut tersebut juga dapat digolongkan dalam kategori Information Hiding, yaitu menyembunyikan atribut dan methode suatu objek dari objek lainnya. Atribut tersebut masing-masing akan digunakan untuk menampung nilai mesin cc, plat nomor mobil, dan juga jenis mobil yang ditawarkan.
 
 c. Pada class yang sama kami juga hadirkan contoh methode yang bernama setJenis :
 
@@ -158,6 +158,102 @@ public void jual(Toyota toyota, String kondisi) {
 ```
 
 Program diatas memanggil obyek toyota.getPalt, getMerk, GetTahun dan lain sebagainya. Output dari program ini nantinya akan memberikan perintah kepada database untuk menerima/menginput data dari user data tentang mobil yang akan dijual.
+
+e. Pada materi PBO juga terdapat constructor, yaitu suatu method yang pertama kali dijalankan pada saat pembuatan suatu obyek. Berikut adalah contoh program pada GarShop pada package model class Mitsubishi dan constructornya :
+
+```java
+public class Mitsubishi extends Mobil {
+    private int cc;
+    private String plat;
+    private String jenis;
+
+    public Mitsubishi(String plat, String merk, int tahun, int harga, int cc,  String jenis) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+        this.jenis = jenis;
+    }
+}    
+```
+
+f. Overloading Constructor merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Contoh pada program kami pada package model class Mitsubishi dan constructor-constructornya:
+
+```java
+public class Mitsubishi extends Mobil {
+    private int cc;
+    private String plat;
+    private String jenis;
+
+    public Mitsubishi(String plat, String merk, int tahun, int harga, int cc,  String jenis) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+        this.jenis = jenis;
+    }
+
+    public Mitsubishi(String merk, int tahun, int harga, int cc, String plat) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+    }
+
+    public Mitsubishi() {
+
+    }
+}    
+```
+
+2. Mengelola Class
+
+a. Package adalah suatu cara untuk memenej class-class yang kita buat pakage akan sangat bermanfaat jika class-class yang kita buat sangat banyak sehingga perlu dikelompokan berdasarkan kategori tertentu. Berikut Contohnya pada program kami pada package model class Mitsubishi :
+
+```java
+package com.tubes.model;
+```
+
+Package diatas memiliki arti bahwa program disimpan pada package com kemudian ke package tubes lalu ke package model.
+
+b. Import Class
+
+Perintah import digunakan untuk memberitahukan kepada program untuk mengacu pada class-class yang terdapat dalam package tertentu, buka menjalankan class-class tersebut. Berikut Contohnya pada program kami pada
+
+
+```java
+import com.tubes.db.koneksi;
+```
+
+Kode program diatas berarti program ini akan meng-impor class koneksi yang berada pada package com, tubes, dan db.
+
+c. Kata kunci this
+
+Kata kunci ini digunakan dalam sebuah kelas untuk menyatakan object sekarang. Berikut Contohnya pada program kami pada package model class Mitsubishi : 
+
+```java
+public Mitsubishi(String merk, int tahun, int harga, int cc, String plat) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+    }
+```
+
+Terdapat dua kata kunci this pada kode program diatas. Yang pertama this untuk variabel cc, jadi nantinya nilai cc akan diperbarui ke nilai terbaru, begitu juga berlaku pada this variabel plat yang nilainya akan diperbarui.
+
+3. Konsep Inhertence
+
+Di dalam Java untuk mendeklarasikan suatu class sebagai subclass dilakukan dengan cara menambahkan kata kunci extends setelah deklarasi nama class, kemudian diikuti dengan nama parent class-nya. Berikut adalah contoh deklarasi inheritance pada program kami :
+
+```java
+public class Mitsubishi extends Mobil {
+. . .
+}
+```
+
+Maksud dari contoh diatas adalah class Mitsubishi adalah subclass/turunan dari Class Mobil. Yang berarti mewarisi sifat dari class utamanya.
+
+4. Overloading dan Overriding
+
+Overloading adalah suatu keadaan dimana ada beberapa method dengan nama yang sama pada suatu class tetapi dengan parameter yang berbeda (mempunyai implementasi dan return value).
+
 
 <hr>
 
