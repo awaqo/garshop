@@ -31,6 +31,6 @@ public class Main {
 
                     break;
             }
-        } while (pilih_menu != 5);
+        } while (pilih_menu != 3);
     }
 }

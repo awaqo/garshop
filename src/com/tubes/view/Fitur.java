@@ -48,7 +48,6 @@ public class Fitur {
                     System.out.println("\tCC: " + data[i][4]);
                     System.out.println("\tKondisi: " + data[i][5]);
                     System.out.println("\tJenis: " + data[i][6]);
-                    System.out.println();
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -74,7 +73,6 @@ public class Fitur {
                     System.out.println("\tCC: " + data[i][4]);
                     System.out.println("\tKondisi: " + data[i][5]);
                     System.out.println("\tJenis: " + data[i][6]);
-                    System.out.println();
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -88,15 +86,16 @@ public class Fitur {
 
         switch (pilih_merk) {
             case 1:
-                System.out.print("Masukkan No Plat: ");
+                System.out.println();
+                System.out.print("\tMasukkan No Plat: ");
                 String no_plat = Sstring.nextLine();
-                System.out.print("Masukkan Nama Mobil: ");
+                System.out.print("\tMasukkan Nama Mobil: ");
                 String nama = Sstring.nextLine();
-                System.out.print("Masukkan Tahun: ");
+                System.out.print("\tMasukkan Tahun: ");
                 int tahun = Sint.nextInt();
-                System.out.print("Masukkan harga: ");
+                System.out.print("\tMasukkan harga: ");
                 int harga = Sint.nextInt();
-                System.out.print("Masukkan CC:");
+                System.out.print("\tMasukkan CC:");
                 int cc = Sint.nextInt();
 
                 System.out.println(">\tJenis");
@@ -114,22 +113,23 @@ public class Fitur {
                         jenis1 = "Bekas";
                 }
 
-                System.out.print("Masukkan Kondisi: ");
+                System.out.print("\tMasukkan Kondisi: ");
                 String kondisi = Sstring.nextLine();
 
                 Toyota toyota = new Toyota(no_plat, nama, tahun, harga, cc, jenis1);
                 model.jual(toyota, kondisi);
                 break;
             case 2:
-                System.out.print("Masukkan No Plat: ");
+                System.out.println();
+                System.out.print("\tMasukkan No Plat: ");
                 String no_plat1 = Sstring.nextLine();
-                System.out.print("Masukkan Nama Mobil: ");
+                System.out.print("\tMasukkan Nama Mobil: ");
                 String nama1 = Sstring.nextLine();
-                System.out.print("Masukkan Tahun: ");
+                System.out.print("\tMasukkan Tahun: ");
                 int tahun1 = Sint.nextInt();
-                System.out.print("Masukkan harga: ");
+                System.out.print("\tMasukkan harga: ");
                 int harga1 = Sint.nextInt();
-                System.out.print("Masukkan CC:");
+                System.out.print("\tMasukkan CC:");
                 int cc1 = Sint.nextInt();
 
                 System.out.println(">\tJenis");
@@ -160,11 +160,11 @@ public class Fitur {
 
         switch (pilihmerk) {
             case 1:
-                Toyota toyota = new Toyota();
+                Mobil toyota = new Toyota();
                 instance1(toyota);
                 break;
             case 2:
-                Mitsubishi mitsubishi = new Mitsubishi();
+                Mobil mitsubishi = new Mitsubishi();
                 instance1(mitsubishi);
                 break;
         }

@@ -14,7 +14,7 @@ public class koneksi {
         try {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(host,user,pass);
-            System.out.println("Koneksi Berhasil");
+//            System.out.println("Koneksi Berhasil");
             return conn;
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Koneksi Gagal "+e);

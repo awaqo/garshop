@@ -46,7 +46,7 @@ public class ModelFitur implements InterfaceMain {
                     "'"+ mitsubishi.getHarga() +"', " +
                     "'"+ mitsubishi.getCc() +"', " +
                     "'', " +
-                    "'\"+ mitsubishi.getJenis() +\"'" +
+                    "'"+ mitsubishi.getJenis() +"'" +
                     ")";
             st.execute(query);
             System.out.println("Berhasil Menambahkan");
