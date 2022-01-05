@@ -86,8 +86,7 @@ Secara eksplisit, kita dapat melempar (throw) exception dari program menggunakan
 
 Berikut ini adalah penjelasan program kami yang bernama GarShop dan kaitannya dengan materi pada modul 3-9.
 
-### ☂️ Pengenalan Pemrograman Berorientasi Objek
-
+### ☂️ Pengenalan Pemrograman Berorientasi Objek `Modul 3`
 1. Class
 <br> Pada program Garshop ini terdapat banyak sekali class yang terdeklarasi. Sebagai contoh berikut contoh class koneksi pada branc db :
 
@@ -162,8 +161,48 @@ public void jual(Toyota toyota, String kondisi) {
 ```
 
 Program diatas memanggil obyek toyota.getPalt, getMerk, GetTahun dan lain sebagainya. Output dari program ini nantinya akan memberikan perintah kepada database untuk menerima/menginput data dari user data tentang mobil yang akan dijual.
+<br><br>
 
-e. Pada materi PBO juga terdapat constructor, yaitu suatu method yang pertama kali dijalankan pada saat pembuatan suatu obyek. Berikut adalah contoh program pada GarShop pada package model class Mitsubishi dan constructornya :
+### ☂️ Dasar Pemrograman Berorientasi Objek `Modul 4`
+
+1. Information Hiding
+<br> Information Hiding adalah menyembunyikan atribut dan method suatu objek dari objek lain. Contoh penerapannya dalam program kami yaitu :
+```java
+    private String merk;
+    private int tahun;
+    private int harga;
+```
+
+2. Encapsulation
+<br> Enkapsulasi(encapsulation) adalah metode untuk mengatur struktur pada class dengan tujuan untuk menentukan hak akses pada property atau method. Contoh penerapan enkapsulasi pada program kami yaitu : 
+```java
+    public int getCc() {
+        return cc;
+    }
+
+    public void setCc(int cc) {
+        this.cc = cc;
+    }
+
+    public String getPlat() {
+        return plat;
+    }
+
+    public void setPlat(String plat) {
+        this.plat = plat;
+    }
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+```
+
+3. Constructor
+<br> Pada materi PBO juga terdapat constructor, yaitu suatu method yang pertama kali dijalankan pada saat pembuatan suatu obyek. Berikut adalah contoh program pada GarShop pada package model class Mitsubishi dan constructornya :
 
 ```java
 public class Mitsubishi extends Mobil {
@@ -180,7 +219,7 @@ public class Mitsubishi extends Mobil {
 }    
 ```
 
-f. Overloading Constructor merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Contoh pada program kami pada package model class Mitsubishi dan constructor-constructornya:
+4. Overloading Constructor merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Contoh pada program kami pada package model class Mitsubishi dan constructor-constructornya:
 
 ```java
 public class Mitsubishi extends Mobil {
@@ -206,10 +245,12 @@ public class Mitsubishi extends Mobil {
     }
 }    
 ```
+<br><br>
 
-2. Mengelola Class
+### ☂️ Mengelola Class `Modul 5`
 
-a. Package adalah suatu cara untuk memenej class-class yang kita buat pakage akan sangat bermanfaat jika class-class yang kita buat sangat banyak sehingga perlu dikelompokan berdasarkan kategori tertentu. Berikut Contohnya pada program kami pada package model class Mitsubishi :
+1. Package 
+<br> Package adalah suatu cara untuk memenej class-class yang kita buat pakage akan sangat bermanfaat jika class-class yang kita buat sangat banyak sehingga perlu dikelompokan berdasarkan kategori tertentu. Berikut Contohnya pada program kami pada package model class Mitsubishi :
 
 ```java
 package com.tubes.model;
@@ -217,9 +258,8 @@ package com.tubes.model;
 
 Package diatas memiliki arti bahwa program disimpan pada package com kemudian ke package tubes lalu ke package model.
 
-b. Import Class
-
-Perintah import digunakan untuk memberitahukan kepada program untuk mengacu pada class-class yang terdapat dalam package tertentu, buka menjalankan class-class tersebut. Berikut Contohnya pada program kami pada
+2. Import Class
+<br> Perintah import digunakan untuk memberitahukan kepada program untuk mengacu pada class-class yang terdapat dalam package tertentu, buka menjalankan class-class tersebut. Berikut Contohnya pada program kami pada
 
 
 ```java
@@ -228,9 +268,8 @@ import com.tubes.db.koneksi;
 
 Kode program diatas berarti program ini akan meng-impor class koneksi yang berada pada package com, tubes, dan db.
 
-c. Kata kunci this
-
-Kata kunci ini digunakan dalam sebuah kelas untuk menyatakan object sekarang. Berikut Contohnya pada program kami pada package model class Mitsubishi : 
+3. Kata kunci this
+<br> Kata kunci ini digunakan dalam sebuah kelas untuk menyatakan object sekarang. Berikut Contohnya pada program kami pada package model class Mitsubishi : 
 
 ```java
 public Mitsubishi(String merk, int tahun, int harga, int cc, String plat) {
@@ -241,8 +280,9 @@ public Mitsubishi(String merk, int tahun, int harga, int cc, String plat) {
 ```
 
 Terdapat dua kata kunci this pada kode program diatas. Yang pertama this untuk variabel cc, jadi nantinya nilai cc akan diperbarui ke nilai terbaru, begitu juga berlaku pada this variabel plat yang nilainya akan diperbarui.
+<br><br>
 
-3. Konsep Inhertence
+### ☂️ Konsep Inhertence `Modul 6`
 
 Di dalam Java untuk mendeklarasikan suatu class sebagai subclass dilakukan dengan cara menambahkan kata kunci extends setelah deklarasi nama class, kemudian diikuti dengan nama parent class-nya. Berikut adalah contoh deklarasi inheritance pada program kami :
 
@@ -253,11 +293,50 @@ public class Mitsubishi extends Mobil {
 ```
 
 Maksud dari contoh diatas adalah class Mitsubishi adalah subclass/turunan dari Class Mobil. Yang berarti mewarisi sifat dari class utamanya.
+<br><br>
 
-4. Overloading dan Overriding
+### ☂️ Overloading dan Overriding `Modul 7`
 
 Overloading adalah suatu keadaan dimana ada beberapa method dengan nama yang sama pada suatu class tetapi dengan parameter yang berbeda (mempunyai implementasi dan return value).
 
+<br><br>
 
+### ☂️ Polimorfisme `Modul 8`
+<br><br>
+
+### ☂️ Exception `Modul 9`
+
+Untuk menangani exception dalam program, dengan meletakkan kode program yang memungkinkan terjadinya exception didalam blok try, diikuti dengan blok catch yang menentukan jenis exception yang ingin ditangani.
+<br> Contoh penggunaan exception handling dengan try-catch pada program kami yaitu :
+```java
+    @Override
+    public String[][] beli(Mitsubishi mitsubishi, int jumlah) {
+        String[][] data1 = new String[0][0];
+
+        try {
+            st = cn.createStatement();
+            String sql = "SELECT * FROM mobil  WHERE tipe = 'Mitsubishi'";
+            rs = st.executeQuery(sql);
+
+            int i = 0;
+            String[][] data = new String[jumlah][7];
+
+            while (rs.next()) {
+                data[i][0] = rs.getString("no_plat");
+                data[i][1] = rs.getString("merk");
+                data[i][2] = rs.getString("tahun");
+                data[i][3] = rs.getString("harga");
+                data[i][4] = rs.getString("cc");
+                data[i][5] = rs.getString("kondisi");
+                data[i][6] = rs.getString("jenis");
+                i++;
+            }
+            return data;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return data1;
+    }
+```
 <hr>
 
