@@ -160,11 +160,11 @@ public class Fitur {
 
         switch (pilihmerk) {
             case 1:
-                Toyota toyota = new Toyota();
+                Mobil toyota = new Toyota();            // Polymorphic arguments
                 instance1(toyota);
                 break;
             case 2:
-                Mitsubishi mitsubishi = new Mitsubishi();
+                Mobil mitsubishi = new Mitsubishi();    // Polymorphic Arguments
                 instance1(mitsubishi);
                 break;
         }
