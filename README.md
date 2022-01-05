@@ -297,8 +297,26 @@ Maksud dari contoh diatas adalah class Mitsubishi adalah subclass/turunan dari C
 
 ### ☂️ Overloading dan Overriding `Modul 7`
 
+
 Overloading adalah suatu keadaan dimana ada beberapa method dengan nama yang sama pada suatu class tetapi dengan parameter yang berbeda (mempunyai implementasi dan return value).
 
+```java
+public Mitsubishi(String plat, String merk, int tahun, int harga, int cc,  String jenis) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+        this.jenis = jenis;
+    }
+
+    public Mitsubishi(String merk, int tahun, int harga, int cc, String plat) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+    }    Overloading
+
+```
+ memungkinkan metode yang berbeda untuk memiliki nama yang sama, tetapi tanda tangan yang berbeda di mana tanda tangan dapat berbeda dengan jumlah parameter input atau jenis parameter input atau keduanya. Overloading terkait dengan waktu kompilasi (atau statis) polimorfisme
+ 
 <br><br>
 
 ### ☂️ Polimorfisme `Modul 8`
