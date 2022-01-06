@@ -1,6 +1,28 @@
 # Program Penjualan Mobil : GarShop (Garasi Shop)
-Mata kuliah Pemrograman 2
-### 👑 GANTENG SQUAD
+### `Mata Kuliah Pemrograman 2`
+
+## 🌞Daftar Isi 🌝
+- [Tentang GarShop](https://github.com/awaqo/garshop#tentang-garshop)
+- [Dasar Teori](https://github.com/awaqo/garshop#dasar-teori)
+  - [Pengenalan Pemrograman Berorientasi Objek](https://github.com/awaqo/garshop#a-pengenalan-pemrograman-beriorientasi-objek-bab-3--4)
+  - [Mengelola Class](https://github.com/awaqo/garshop#b-mengelola-class-bab-5)
+  - [Konsep Inheritance](https://github.com/awaqo/garshop#c-konsep-inheritance-bab-6)
+  - [Overloading & Overriding](https://github.com/awaqo/garshop#d-overloading-dan-overriding-bab-7)
+  - [Polimorfisme](https://github.com/awaqo/garshop#e-polimorfisme-bab-8)
+  - [Exception](https://github.com/awaqo/garshop#f-exception-bab-9)
+- [Penjelasan Program](https://github.com/awaqo/garshop#penjelasan-program)
+  - [Modul 3](https://github.com/awaqo/garshop#%EF%B8%8F-pengenalan-pemrograman-berorientasi-objek-modul-3)
+  - [Modul 4](https://github.com/awaqo/garshop#%EF%B8%8F-dasar-pemrograman-berorientasi-objek-modul-4)
+  - [Modul 5](https://github.com/awaqo/garshop#%EF%B8%8F-mengelola-class-modul-5)
+  - [Modul 6](https://github.com/awaqo/garshop#%EF%B8%8F-konsep-inhertence-modul-6)
+  - [Modul 7](https://github.com/awaqo/garshop#%EF%B8%8F-overloading-dan-overriding-modul-7)
+  - [Modul 8](https://github.com/awaqo/garshop#%EF%B8%8F-polimorfisme-modul-8)
+  - [Modul 9](https://github.com/awaqo/garshop#%EF%B8%8F-exception-modul-9)
+- [Tools yang Digunakan](https://github.com/awaqo/garshop#tools-yang-digunakan)
+
+<hr>
+
+### 👑 GANTENG SQUAD 👑
 | No. | Nama | NIM | Kelas  |
 | ----------- | ----------- | ----------- | ----------- |
 | 1 | Adhit Fatwa | 20104004 | S1SE-04-A |
@@ -8,6 +30,13 @@ Mata kuliah Pemrograman 2
 | 3 | Bintang Ahmada Farhan Adama | 20104020 | S1SE-04-A |
 | 4 | Brahmasta Bagus Aryandra | 20104021 | S1SE-04-A |
 | 5 | Rasyid Ramadhani | 20104099 | S1SE-04-A |
+
+<hr>
+
+## Tentang GarShop
+
+aowkoakwoakwoakwoakwoakwoakwoa
+<br><br>
 
 ## Dasar Teori
 
@@ -415,3 +444,11 @@ Untuk menangani exception dalam program, dengan meletakkan kode program yang mem
 ```
 <hr>
 
+### Tools yang Digunakan
+
+<img align="left" alt="IntelliJ" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/1024px-IntelliJ_IDEA_Icon.svg.png" />
+<img align="left" alt="Xampp" width="26px" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/XAMPP_logo.svg/1200px-XAMPP_logo.svg.png" />
+<img align="left" alt="github" width="26px" src="http://www.sr.bham.ac.uk/~toonen/images/github2.jpg" />
+<img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />
+<img align="left" alt="MySQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" />
+<br><br>
