@@ -35,7 +35,7 @@
 
 ## Tentang GarShop
 
-aowkoakwoakwoakwoakwoakwoakwoa
+Garasi Shop atau yang kami singkat menjadi `GarShop` merupakan sebuah program sederhana dimana user bisa melakukan `penjualan` ataupun `pembelian` terhadap mobil. `Mobil` yang dapat user jual maupun beli dapat dalam kondisi yang masih baru atau sudah dalam kondisi bekas pemakaian user tersebut. Bisa dikatakan, GarShop adalah marketplace yang menyediakan berbagai jenis dan merk mobil.
 <br><br>
 
 ## Dasar Teori
@@ -43,12 +43,13 @@ aowkoakwoakwoakwoakwoakwoakwoa
 ### A. PENGENALAN PEMROGRAMAN BERIORIENTASI OBJEK (`BAB 3 & 4`)
 
 Pemrograman Berorientasi Objek, Deklarasi Class, Atribut, dan Akses Obyek 
-Pemrograman Berorientasi Objek (Object Oriented Programming/OOP) merupakan pemrograman yang berorientasikan kepada objek, dimana semua data dan fungsi dibungkus dalam class- class atau object-object. PBO memiliki beberapa karakteristik mendasar, antara lain  adalah abstraksi, encapculation (pembungkusan), inheritance  (pewarisan), dan polymorphism. Class  adalah  wadah  yang  berisi  abstraksi  (pemodelan)  dari  suatu  fungsi objek (benda),  yang  mendeskripsikan  data  (sifat  karakteristik)  dan  fungsi  yang  dimiliki oleh  objek tersebut. Attributes merupakan nilai (type) data  yang  terdapat pada  suatu object  yang berasal dari class. Attributes merepresentasikan karakteristik dari suatu object. Metode/method adalah sesuatu yang dapat dilakukan oleh objek. Method dalam implementasi program ditulis dalam bentuk fungsi. Metode menentukan apa yang  terjadi ketika objek  itu dibuat serta berbagai operasi yang dapat dilakukan objek.oleh karna itu untuk dapat  mengakses  anggota-anggota  dari  suatu  obyek,  maka harus dibuat instance dari class tersebut terlebih dahulu. 
+Pemrograman Berorientasi Objek (Object Oriented Programming/OOP) merupakan pemrograman yang berorientasikan kepada objek, dimana semua data dan fungsi dibungkus dalam class- class atau object-object. PBO memiliki beberapa karakteristik mendasar, antara lain  adalah abstraksi, encapculation (pembungkusan), inheritance  (pewarisan), dan polymorphism. `Class`  adalah  wadah  yang  berisi  abstraksi  (pemodelan)  dari  suatu  fungsi objek (benda),  yang  mendeskripsikan  data  (sifat  karakteristik)  dan  fungsi  yang  dimiliki oleh  objek tersebut. `Attributes` merupakan nilai (type) data  yang  terdapat pada  suatu object  yang berasal dari class. Attributes merepresentasikan karakteristik dari suatu object. Metode/method adalah sesuatu yang dapat dilakukan oleh objek. Method dalam implementasi program ditulis dalam bentuk fungsi. Metode menentukan apa yang  terjadi ketika objek  itu dibuat serta berbagai operasi yang dapat dilakukan objek.oleh karna itu untuk dapat  mengakses  anggota-anggota  dari  suatu  obyek,  maka harus dibuat instance dari class tersebut terlebih dahulu. 
 
 Information Hiding dan Encapsulation
-Information Hiding adalah menyembunyikan atribut dan method suatu objek dari objek lain. Informasi dari suatu class disembunyikan agar anggotaanggota tersebut tidak dapat diakses dari luar. Adapun caranya adalah    cukup    dengan    memberikan    akses    control    private    ketika mendeklarasikan suatu atribut atau method. Encapsulation (Enkapsulasi) adalah suatu cara untuk menyembunyikan implementasi detail dari suatu class. Enkapsulasi mempunyai dua hal mendasar, yaitu Information hiding dan Menyediakan suatu perantara (method) untuk pengaksesan data. 
+`Information Hiding` adalah menyembunyikan atribut dan method suatu objek dari objek lain. Informasi dari suatu class disembunyikan agar anggotaanggota tersebut tidak dapat diakses dari luar. Adapun caranya adalah    cukup    dengan    memberikan    akses    control    private    ketika mendeklarasikan suatu atribut atau method. 
+<br> `Encapsulation (Enkapsulasi)` adalah suatu cara untuk menyembunyikan implementasi detail dari suatu class. Enkapsulasi mempunyai dua hal mendasar, yaitu Information hiding dan Menyediakan suatu perantara (method) untuk pengaksesan data. 
 
-Contructor (konstruktor) adalah suatu method yang pertama kali dijalankan pada saat pembuatan suatu obyek. Konstruktor ini merupakan method yang berfungsi untuk menginisialisasi variabel-variabel instans yang akan di miliki oleh objek. Konstruktor dipanggil pada saat proses instansiasi kelas menjadi objek. Beberapa karakteristik yang dimiliki oleh constructor : 
+`Contructor (konstruktor)` adalah suatu method yang pertama kali dijalankan pada saat pembuatan suatu obyek. Konstruktor ini merupakan method yang berfungsi untuk menginisialisasi variabel-variabel instans yang akan di miliki oleh objek. Konstruktor dipanggil pada saat proses instansiasi kelas menjadi objek. Beberapa karakteristik yang dimiliki oleh constructor : 
 
 1. Method constructor harus memiliki nama yang sama dengan nama class. 
 2. Tidak mengembalikan suatu nilai (tidak ada keyword return). 
@@ -56,17 +57,18 @@ Contructor (konstruktor) adalah suatu method yang pertama kali dijalankan pada s
 4. Dapat  ditambah  access  modifier public,  private,  protected  maupun default. 
 5. Suatu constructor bisa dipanggil oleh constructor lain dalam satu class. 
 
-Overloading Constructor merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Constructor tidak dapat dipanggil secara langsung, namun harus dipanggil dengan menggunakan operator new pada pembentukan sebuah class. 
+`Overloading Constructor` merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Constructor tidak dapat dipanggil secara langsung, namun harus dipanggil dengan menggunakan operator new pada pembentukan sebuah class. 
 
 ### B. MENGELOLA CLASS (`BAB 5`)
 - Package, Class, Kata Kunci This
 
- Package adalah suatu cara untuk memanage class-class yang kita buat pakage akan sangat bermanfaat jika class-class yang kita buat sangat banyak sehingga perlu dikelompokan berdasarkan kategori tertentu. Jadi yang harus diperhatikan adalah biasanya nama class utama harus sama dengan nama package. Perintah import digunakan untuk memberitahukan kepada program untuk mengacu pada class-class yang terdapat dalam package tertentu, buka menjalankan class-class tersebut. Sedangkan   untuk   mengimpor   class   tertentu   anda   dapat menuliskan nama class setelah nama package. Kata kunci ini digunakan dalam sebuah kelas untuk menyatakan object sekarang. Kata kunci this sangat berguna untuk menunjukkan suatu member dalam class-nya sendiri. this dapat digunakan baik untuk data  member  maupun  untuk  function  member,  serta  dapat  juga digunakan untuk konstruktor. 
+`Package` adalah suatu cara untuk memanage class-class yang kita buat pakage akan sangat bermanfaat jika class-class yang kita buat sangat banyak sehingga perlu dikelompokan berdasarkan kategori tertentu. Jadi yang harus diperhatikan adalah biasanya nama class utama harus sama dengan nama package. Perintah import digunakan untuk memberitahukan kepada program untuk mengacu pada class-class yang terdapat dalam package tertentu, buka menjalankan class-class tersebut. Sedangkan   untuk   mengimpor   class   tertentu   anda   dapat menuliskan nama class setelah nama package. 
+<br> `Kata kunci` ini digunakan dalam sebuah kelas untuk menyatakan object sekarang. Kata kunci this sangat berguna untuk menunjukkan suatu member dalam class-nya sendiri. this dapat digunakan baik untuk data  member  maupun  untuk  function  member,  serta  dapat  juga digunakan untuk konstruktor. 
 
 ### C. KONSEP INHERITANCE (`BAB 6`)
 
-  Dengan  konsep  inheritance,  sebuah  class  dapat  mempunyai  class turunan. Suatu class yang mempunyai class turunan dinamakan parent class atau base class. Sedangkan class turunan itu sendiri seringkali disebut subclass atau child class. Suatu subclass dapat mewarisi apa-apa yang dipunyai oleh parent class-nya. Kesimpulannya, boleh dikatakan bahwa suatu subclass adalah tidak lain hanya memperluas (extend) parent class-nya. Di dalam Java untuk mendeklarasikan suatu class sebagai subclass dilakukan dengan cara menambahkan kata kunci extends setelah deklarasi nama class, kemudian diikuti dengan nama parent class-nya. 
-  Java hanya memperkenankan adanya single inheritance. Konsep single inheritance hanya memperbolehkan suatu sublass mempunyai satu parent class. Dengan konsep single inheritance ini, masalah pewarisan akan dapat diamati dengan mudah. Suatu parent class dapat tidak mewariskan sebagian member-nya kepada subclass-nya. Sejauh mana suatu member dapat diwariskan ke class lain, ataupun suatu member dapat diakses dari class lain, sangat berhubungan dengan access control (kontrol pengaksesan). Kata kunci super dipakai untuk merujuk pada member dari parent class, sebagaimana kata kunci this yang dipakai untuk merujuk pada member dari class itu sendiri. 
+Dengan  konsep  `inheritance`,  sebuah  class  dapat  mempunyai  class turunan. Suatu class yang mempunyai class turunan dinamakan parent class atau base class. Sedangkan class turunan itu sendiri seringkali disebut subclass atau child class. Suatu subclass dapat mewarisi apa-apa yang dipunyai oleh parent class-nya. Kesimpulannya, boleh dikatakan bahwa suatu subclass adalah tidak lain hanya memperluas (extend) parent class-nya. Di dalam Java untuk mendeklarasikan suatu class sebagai subclass dilakukan dengan cara menambahkan kata kunci extends setelah deklarasi nama class, kemudian diikuti dengan nama parent class-nya. 
+Java hanya memperkenankan adanya single inheritance. Konsep single inheritance hanya memperbolehkan suatu sublass mempunyai satu parent class. Dengan konsep single inheritance ini, masalah pewarisan akan dapat diamati dengan mudah. Suatu parent class dapat tidak mewariskan sebagian member-nya kepada subclass-nya. Sejauh mana suatu member dapat diwariskan ke class lain, ataupun suatu member dapat diakses dari class lain, sangat berhubungan dengan access control (kontrol pengaksesan). Kata kunci super dipakai untuk merujuk pada member dari parent class, sebagaimana kata kunci this yang dipakai untuk merujuk pada member dari class itu sendiri. 
 Ada beberapa hal yang harus diingat ketika menggunakan pemanggil constuktor super: 
 
 1. Pemanggil super() HARUS DIJADIKAN PERNYATAAN PERTAMA DALAM constructor. 
@@ -75,28 +77,28 @@ Ada beberapa hal yang harus diingat ketika menggunakan pemanggil constuktor supe
 
 ### D. OVERLOADING DAN OVERRIDING (`BAB 7`)
 
-Overloading adalah suatu keadaan dimana ada beberapa method dengan nama yang sama  pada suatu class tetapi dengan parameter yang berbeda atau (mempunyai implementasi dan return value). Tujuan dibuatnya overloading yaitu untuk memudahkan pengguna method dengan fungsi yang hampir sama.
+`Overloading` adalah suatu keadaan dimana ada beberapa method dengan nama yang sama  pada suatu class tetapi dengan parameter yang berbeda atau (mempunyai implementasi dan return value). Tujuan dibuatnya overloading yaitu untuk memudahkan pengguna method dengan fungsi yang hampir sama.
 Overloading ini dapat terjadi pada class yang sama atau pada suatu parent class dan subclass-nya. Overloading mempunyai ciri-ciri sebagai berikut : 
 
 1. Nama Method harus sama 
 2. Daftar parameter harus berbeda 
 3. Return type boleh sama,juga boleh berbeda. 
 
-Overriding tidak sama dengan overloading, Overriding merupakan mekanisme dimana sebuah metode dapat dideklarasikan ulang pada kelas turunannya. Overriding mempunyai ciri-ciri sebagai berikut : 
+`Overriding` tidak sama dengan overloading, Overriding merupakan mekanisme dimana sebuah metode dapat dideklarasikan ulang pada kelas turunannya. Overriding mempunyai ciri-ciri sebagai berikut : 
 
 1. Nama Method harus sama 
 2. Daftar parameter harus sama 
 3. Return type harus sama
 
-Method  yang terkena override (overiden  method) diharuskan  tidak boleh mempunyai modifier yang lebih luas aksesnya dari method yang meng- overide (overriding method). 
+Method yang terkena override (overiden  method) diharuskan  tidak boleh mempunyai modifier yang lebih luas aksesnya dari method yang meng- overide (overriding method). 
 
 ### E. POLIMORFISME (`BAB 8`)
 
-  Polymorphism (polimorfisme) adalah kemampuan untuk mempunyai beberapa bentuk class yang berbeda. Polimorfisme ini terjadi pada saat suatu obyek bertipe parent class, akan tetapi pemanggilan constructornya melalui subclass. Virtual Method Invocation (VMI) bisa terjadi jika terjadi polimorfisme dan  overriding.  Pada saat  obyek  yang sudah  dibuat  tersebut  memanggil overridden method pada parent class, kompiler Java akan melakukan invocation (pemanggilan) terhadap overriding method pada subclass, dimana yang  seharusnya  dipanggil  adalah  overridden  method. Polymorphic arguments adalah tipe suatu parameter yang menerima suatu nilai  yang bertipe subclass-nya. Pernyataan instanceof sangat berguna untuk mengetahui tipe asal dari suatu polymorphic arguments. Seringkali pemakaian instanceof diikuti dengan casting object dari tipe parameter ke tipe asal.
+`Polymorphism (polimorfisme)` adalah kemampuan untuk mempunyai beberapa bentuk class yang berbeda. Polimorfisme ini terjadi pada saat suatu obyek bertipe parent class, akan tetapi pemanggilan constructornya melalui subclass. Virtual Method Invocation (VMI) bisa terjadi jika terjadi polimorfisme dan  overriding.  Pada saat  obyek  yang sudah  dibuat  tersebut  memanggil overridden method pada parent class, kompiler Java akan melakukan invocation (pemanggilan) terhadap overriding method pada subclass, dimana yang  seharusnya  dipanggil  adalah  overridden  method. Polymorphic arguments adalah tipe suatu parameter yang menerima suatu nilai  yang bertipe subclass-nya. Pernyataan instanceof sangat berguna untuk mengetahui tipe asal dari suatu polymorphic arguments. Seringkali pemakaian instanceof diikuti dengan casting object dari tipe parameter ke tipe asal.
 
 ### F. EXCEPTION (`BAB 9`)
 
-   Exception adalah suatu kondisi abnormal yang terjadi pada saat menjalankan program. Teknik yang dipakai dalam Java untuk menangani kondisi yang tidak biasa saat menjalankan operasi normal dalam program dinamakan exception handling. Karena dalam java segala sesuatu merupakan objek, maka exception juga akan direpresentasikan dalam sebuah objek yang menjelaskan tentang exception tersebut. Contoh exception adalah pembagian bilangan dengan 0, pengisian elemen array diluar ukuran array, kegagalan koneksi database, file yang akan dibuka tidak ada, dan mengakses objek yang belum diinisialisasi. Terdapat dua penanganan exception yaitu: 
+`Exception` adalah suatu kondisi abnormal yang terjadi pada saat menjalankan program. Teknik yang dipakai dalam Java untuk menangani kondisi yang tidak biasa saat menjalankan operasi normal dalam program dinamakan exception handling. Karena dalam java segala sesuatu merupakan objek, maka exception juga akan direpresentasikan dalam sebuah objek yang menjelaskan tentang exception tersebut. Contoh exception adalah pembagian bilangan dengan 0, pengisian elemen array diluar ukuran array, kegagalan koneksi database, file yang akan dibuka tidak ada, dan mengakses objek yang belum diinisialisasi. Terdapat dua penanganan exception yaitu: 
    a. Menangani sendiri exception tersebut. 
    b. Meneruskannya ke luar dengan cara membuat objek tentang exception tersebut dan melemparkannya (throw) keluar agar ditangani oleh kode yang memanggil method(method yang didalamnya terdapat exception) tersebut. Ada  lima  keyword  yang  digunakan  oleh  Java  untuk  menangani exception yaitu try, catch, finally, throw dan throws. 
 
@@ -237,7 +239,8 @@ public class Mitsubishi extends Mobil {
 }    
 ```
 
-4. Overloading Constructor merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Contoh pada program kami pada package model class Mitsubishi dan constructor-constructornya:
+4. Overloading Constructor 
+<br> merupakan suatu class yang mempunyai lebih dari 1 constructor dengan syarat daftar parameternya tidak boleh ada yang sama. Contoh pada program kami pada package model class Mitsubishi dan constructor-constructornya:
 
 ```java
 public class Mitsubishi extends Mobil {
@@ -451,4 +454,5 @@ Untuk menangani exception dalam program, dengan meletakkan kode program yang mem
 <img align="left" alt="github" width="26px" src="http://www.sr.bham.ac.uk/~toonen/images/github2.jpg" />
 <img align="left" alt="SQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />
 <img align="left" alt="MySQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" />
+<img align="left" alt="Whatsapp" width="26px" src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c543.png" />
 <br><br>
