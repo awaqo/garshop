@@ -305,7 +305,8 @@ Terdapat dua kata kunci this pada kode program diatas. Yang pertama this untuk v
 
 ### ☂️ Konsep Inhertence `Modul 6`
 
-Di dalam Java untuk mendeklarasikan suatu class sebagai subclass dilakukan dengan cara menambahkan kata kunci extends setelah deklarasi nama class, kemudian diikuti dengan nama parent class-nya. Berikut adalah contoh deklarasi inheritance pada program kami :
+1. Inheritance 
+<br> Di dalam Java untuk mendeklarasikan suatu class sebagai subclass dilakukan dengan cara menambahkan kata kunci extends setelah deklarasi nama class, kemudian diikuti dengan nama parent class-nya. Berikut adalah contoh deklarasi inheritance pada program kami :
 
 ```java
 public class Mitsubishi extends Mobil {
@@ -314,6 +315,19 @@ public class Mitsubishi extends Mobil {
 ```
 
 Maksud dari contoh diatas adalah class Mitsubishi adalah subclass/turunan dari Class Mobil. Yang berarti mewarisi sifat dari class utamanya.
+
+2. Kata Kunci Super
+<br> Kata kunci super dipakai untuk merujuk pada member dari parent class, 
+sebagaimana kata kunci this yang dipakai untuk merujuk pada member dari
+class itu sendiri.
+```java
+public Toyota(String plat, String merk, int tahun, int harga, int cc, String jenis) {
+        super(merk, tahun, harga);
+        this.cc = cc;
+        this.plat = plat;
+        this.jenis = jenis;
+    }
+```
 <br><br><br>
 
 ### ☂️ Overloading dan Overriding `Modul 7`
